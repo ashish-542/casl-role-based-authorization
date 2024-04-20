@@ -1,0 +1,34 @@
+Create a nest.js project
+Install casl project -> npm i @casl/ability
+Add requirements
+
+Add new resourec user-> nest g resource user
+
+Add User Schema -> fields will be id and isAdmin
+
+Create ability module  - whole authorization(CASL) code will be inside it as nestjs is good with encapsulation
+
+> nest g module ability
+
+Create ability.factory file - we will define all the permissions here.
+
+> nest g class ability/ability.factory
+
+Make AbilityFactory as provider by adding @Injectable
+
+> @Injectable()
+
+Add defineAbility function inside the AbilityFactory class
+
+Define the actions and subject enum -> manage,create, read, update and delete
+
+To use TypeScript, we have to be use interfaces
+-> subject interface
+-> ability interface
+
+//For type checking
+
+>export type AppAbility = MongoAbility<[Action, Subjects]>
+
+>const builder = new AbilityBuilder<AppAbility>(createMongoAbility);
+

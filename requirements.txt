@@ -1,0 +1,14 @@
+//Design APIs that we will be protecting using authorizartion
+
+Get /user
+Get /user/id
+Post user
+Patch user/id
+Delete user/id
+
+
+Access 
+
+- isAdmin : create, read, update and Delete
+- not an Admin : read
+
